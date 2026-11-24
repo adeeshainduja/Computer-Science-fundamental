@@ -1,0 +1,264 @@
+/* ==========================================================================
+   COMPUTER SCIENCE FUNDAMENTALS — Responsive Stylesheet
+   Specific Breakpoints: 320px, 375px, 390px (iPhone 14), 430px, 768px, 1024px, 1440px
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Small Mobile Devices (320px - 374px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 374px) {
+  html {
+    font-size: 14.5px;
+  }
+
+  .main-container {
+    padding: 0.75rem;
+  }
+
+  .hero-card {
+    padding: 1.1rem;
+  }
+
+  .hero-title {
+    font-size: 1.25rem;
+  }
+
+  .flashcard-scene {
+    height: 280px;
+  }
+
+  .card-face {
+    padding: 1.1rem;
+  }
+
+  .card-body-text {
+    font-size: 1rem;
+  }
+
+  .nav-item {
+    font-size: 0.675rem;
+  }
+
+  .nav-item svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Priority Target: iPhone 14 (390px x 844px) & Standard Smartphones (375px - 430px)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 375px) and (max-width: 600px) {
+  .hero-title {
+    font-size: 1.45rem;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Safe Area Accommodations for iPhone Notch & Home Indicator */
+  .app-header {
+    padding-top: max(env(safe-area-inset-top), 10px);
+  }
+
+  .bottom-nav {
+    padding-bottom: max(env(safe-area-inset-bottom), 12px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Larger Phones & Phablets (431px - 767px)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 431px) and (max-width: 767px) {
+  .main-container {
+    padding: 1.25rem;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flashcard-scene {
+    height: 330px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets (768px - 1023px)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  .main-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .quiz-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-card {
+    padding: 2.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    max-width: 80%;
+  }
+
+  .continue-btn {
+    width: auto;
+    display: inline-flex;
+    padding: 0.8rem 1.8rem;
+  }
+
+  .flashcard-scene {
+    height: 340px;
+    max-width: 520px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktops & Large Laptops (1024px and above)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 1024px) {
+  /* On Desktop, hide bottom nav and provide a clean desktop layout */
+  body {
+    padding-bottom: 3rem;
+  }
+
+  .bottom-nav {
+    display: none;
+  }
+
+  .app-header {
+    height: 68px;
+    padding: 0 3rem;
+  }
+
+  .desktop-nav-links {
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .desktop-nav-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .desktop-nav-link:hover, .desktop-nav-link.active {
+    color: var(--primary);
+    background: var(--bg-subtle);
+  }
+
+  .main-container {
+    max-width: 1100px;
+    padding: 2.5rem 2rem;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .quiz-hub-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .topic-layout-desktop {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .topic-sticky-sidebar {
+    position: sticky;
+    top: 90px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .topic-sidebar-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .topic-sidebar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .topic-sidebar-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+  }
+
+  .topic-sidebar-link:hover, .topic-sidebar-link.active {
+    color: var(--primary);
+    background: var(--primary-light);
+    font-weight: 600;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Ultra-Wide Screens (1440px and above)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 1440px) {
+  .main-container {
+    max-width: 1240px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility & Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
