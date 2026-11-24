@@ -50,19 +50,18 @@ window.CS_DATA = {
       var questions = [];
       if (topic.lessons && Array.isArray(topic.lessons)) {
         topic.lessons.forEach(function(lesson) {
-          if (lesson.quiz && Array.isArray(lesson.quiz)) {
-            lesson.quiz.forEach(function(q, qIdx) {
-              questions.push({
-                id: lesson.id + '-q-' + qIdx,
-                lessonId: lesson.id,
-                lessonTitle: lesson.title,
-                question: q.question,
-                options: q.options,
-                correct: q.correct,
-                explanation: q.explanation
-              });
+          var qList = (lesson.quiz && Array.isArray(lesson.quiz)) ? lesson.quiz : (lesson.level3 && Array.isArray(lesson.level3.quiz) ? lesson.level3.quiz : []);
+          qList.forEach(function(q, qIdx) {
+            questions.push({
+              id: lesson.id + '-q-' + qIdx,
+              lessonId: lesson.id,
+              lessonTitle: lesson.title,
+              question: q.question,
+              options: q.options,
+              correct: q.correct,
+              explanation: q.explanation
             });
-          }
+          });
         });
       }
       if (questions.length > 0) {

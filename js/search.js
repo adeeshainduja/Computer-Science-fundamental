@@ -19,15 +19,45 @@ var CS_Search = window.CS_Search = (function() {
         text: (topic.title + ' ' + topic.description + ' ' + topic.badge).toLowerCase()
       });
 
-      // Index lessons
+      // Index lessons (supports both flat schema and level1/2/3 schema)
       if (topic.lessons && Array.isArray(topic.lessons)) {
         topic.lessons.forEach(function(lesson) {
+          const lvl1 = lesson.level1 || {};
+          const lvl2 = lesson.level2 || {};
+          const lvl3 = lesson.level3 || {};
+
+          const whatIsIt = lesson.whatIsIt || lvl1.intro || lvl1.whatIsIt || '';
+          const techExp = lesson.technicalExplanation || lvl2.technicalExplanation || '';
+          const realWorld = lesson.realWorldExample || lvl1.analogy || lvl1.realWorldExample || '';
+          const keyPts = (lesson.keyPoints && lesson.keyPoints.length > 0) ? lesson.keyPoints : (lvl3.keyPoints || []);
+          const qaList = (lesson.interviewQA && lesson.interviewQA.length > 0) ? lesson.interviewQA : (lvl3.interviewQA || []);
+          const cbList = (lesson.codeBlocks && lesson.codeBlocks.length > 0) ? lesson.codeBlocks : (lvl2.codeExamples || lvl2.codeBlocks || []);
+
+          let qaText = '';
+          if (Array.isArray(qaList)) {
+            qaList.forEach(function(qa) {
+              const q = qa.question || qa.q || '';
+              const sa = qa.shortAnswer || qa.shortA || '';
+              const da = qa.detailedAnswer || qa.deepA || '';
+              qaText += ' ' + q + ' ' + sa + ' ' + da;
+            });
+          }
+
+          let codeText = '';
+          if (Array.isArray(cbList)) {
+            cbList.forEach(function(cb) {
+              codeText += ' ' + (cb.title || '') + ' ' + (cb.explanation || '') + ' ' + (cb.code || '');
+            });
+          }
+
           const combined = (
-            lesson.title + ' ' +
-            lesson.subtitle + ' ' +
-            lesson.whatIsIt + ' ' +
-            (lesson.realWorldExample || '') + ' ' +
-            (lesson.keyPoints ? lesson.keyPoints.join(' ') : '')
+            (lesson.title || '') + ' ' +
+            (lesson.subtitle || '') + ' ' +
+            whatIsIt + ' ' +
+            techExp + ' ' +
+            realWorld + ' ' +
+            (keyPts ? keyPts.join(' ') : '') +
+            qaText + codeText
           ).toLowerCase();
 
           searchIndex.push({
@@ -37,7 +67,7 @@ var CS_Search = window.CS_Search = (function() {
             title: lesson.title,
             subtitle: lesson.subtitle,
             category: topic.shortTitle,
-            snippet: lesson.whatIsIt.substring(0, 140) + '...',
+            snippet: (whatIsIt || techExp || '').replace(/<[^>]*>?/gm, '').substring(0, 140) + '...',
             text: combined
           });
         });
@@ -178,6 +208,7 @@ var CS_Search = window.CS_Search = (function() {
       buildIndex();
       initUI();
     },
+    buildIndex: buildIndex,
     query: query
   };
 })();

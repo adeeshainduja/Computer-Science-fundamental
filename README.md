@@ -35,30 +35,34 @@ This application was engineered **mobile-first**, specifically tuned for the **i
 
 ## 🚀 Key Features
 
-1. **Complete 9-Module Curriculum:** 38 comprehensive lessons covering the full spectrum of software engineering technical interviews.
-2. **Interactive 3D Flashcards:** 36 tactile cards with 3D flip animation, category/topic filters, random shuffle mode, and keyboard navigation (`Space` to flip, `←` / `→` to navigate).
-3. **Practice Examination Center:** 62 multiple-choice questions across all topics with instant explanation banners and score tracking.
-4. **Instant Full-Text Search:** Global search indexed across all 9 modules, lessons, summaries, and flashcards with instant keyword highlighting (Shortcut: `Ctrl+K` or `Cmd+K`).
-5. **Persistent Progress Tracker:** Tracks completed lessons, quiz scores, and last-studied topics using browser `localStorage` with full reset capability.
-6. **Dark & Light Mode:** Theme switcher with persistent preferences and high-contrast color palettes.
-7. **Zero-Dependency & 100% Offline:** Pure Vanilla JavaScript, HTML5, and CSS3. Runs immediately without Node.js, npm, or build tools.
+1. **Complete 9-Module Master Curriculum:** Exactly **84 comprehensive lessons** covering the complete depth of software engineering internship and technical interview topics.
+2. **Three Levels of Learning in Every Lesson:**
+   - **Level 1 — Core Intuition (Understand):** Plain English concept explanation (A2–B1), relatable real-world analogy, and responsive vector SVG diagram.
+   - **Level 2 — Deep Technical Dive (Under the Hood):** Full production code examples, JVM/Memory/Kernel execution mechanics, Bad vs. Good code refactorings, comparison matrices, and live interactive simulations.
+   - **Level 3 — Technical Interview Mastery (Ace the Interview):** High-yield key points, deep-dive interview scenarios with 30-second rapid answers and deep explanations, and 2-minute pre-interview revision cheat sheets.
+3. **Interactive 3D Flashcards:** 36 tactile cards with 3D flip animation, category/topic filters, random shuffle mode, and keyboard navigation (`Space` to flip, `←` / `→` to navigate).
+4. **Practice Examination Center:** Multi-question quizzes across all topics with instant explanation feedback and score tracking.
+5. **Instant Full-Text Search Engine:** Instant keyword indexing across all 84 lessons, code blocks, interview questions, and flashcards with highlight matching (Shortcut: `Ctrl+K` or `Cmd+K`).
+6. **Persistent Progress Tracker:** Tracks completed lessons, quiz scores, and last-studied topics using browser `localStorage` with full reset capability.
+7. **Dark & Light Mode:** Theme switcher with persistent preferences and accessible color contrast.
+8. **Zero-Dependency & 100% Offline:** Pure Vanilla JavaScript, HTML5, and CSS3. Runs immediately without Node.js, npm, or build tools.
 
 ---
 
 ## 📚 Curriculum Breakdown
 
-| Module | Title | Lessons | Quizzes | Flashcards | Key Topics Covered |
-|:---:|:---|:---:|:---:|:---:|:---|
-| **01** | **OOP & Design Principles** | 4 | 5 | 4 | 4 Pillars (Encapsulation, Abstraction, Inheritance, Polymorphism), Composition vs. Inheritance, SOLID Principles, GoF Design Patterns (Singleton, Factory, Builder, Observer, Strategy). |
-| **02** | **Data Structures & Algorithms** | 4 | 4 | 4 | Big-O Notation, Arrays, Linked Lists, Stacks, Queues, Hash Tables & Collision Resolution, Trees (BST, AVL), Heaps, Graphs (BFS/DFS), Binary Search. |
-| **03** | **Database Management Systems** | 3 | 3 | 4 | Relational Keys (Candidate, Primary, Foreign), Normalization (1NF–3NF), ACID Transactions, B+ Tree Indexes, CAP Theorem & PACELC. |
-| **04** | **Operating Systems & Concurrency** | 3 | 3 | 4 | Processes vs. Threads, Context Switching, Mutex vs. Semaphore, Deadlocks & Coffman Conditions, Virtual Memory, Paging, Page Faults. |
-| **05** | **Computer Networks & Web Protocols** | 5 | 9 | 4 | OSI 7 Layers vs. TCP/IP, TCP 3-Way Handshake, UDP, HTTP/1.1 to HTTP/3, TLS Handshake, Idempotency, CORS, SameSite Cookies, WebSockets vs. SSE. |
-| **06** | **Backend Architecture & System Design**| 5 | 10 | 4 | REST vs. GraphQL vs. gRPC, Offset vs. Cursor Pagination, Monolith vs. Microservices, Saga Pattern, Redis Caching, Apache Kafka Partitions, Circuit Breakers. |
-| **07** | **JavaScript, TypeScript & Frontend** | 5 | 10 | 4 | Event Loop (Microtask vs. Macrotask queues), Closures, Hoisting & TDZ, TypeScript Types & Generics, React Virtual DOM, Hooks Memoization, Next.js Rendering, Debouncing. |
-| **08** | **Web Security Fundamentals** | 4 | 8 | 4 | Authentication vs. Authorization (401 vs. 403), JWT Structure & Cookie Storage, OAuth 2.0 with PKCE, OWASP Top (SQLi, XSS, CSRF, IDOR), Salted Password Hashes (Bcrypt/Argon2). |
-| **09** | **DevOps, Testing & Engineering Practices** | 5 | 10 | 4 | Git internals, Merge vs. Rebase, Senior PR Review Checklist, Testing Pyramid (Mocks vs. Stubs), Agile Scrum & Story Points, Docker vs. VMs, Blue-Green & Canary Deployments. |
-| **Total** | **9 Core Modules** | **38** | **62** | **36** | **Comprehensive Full-Stack Computer Science Syllabus** |
+| Module | Title | Lessons | Flashcards | Key Topics Covered |
+|:---:|:---|:---:|:---:|:---|
+| **01** | **OOP & Design Principles** | 18 | 4 | Invariant Protection, Abstraction, Inheritance & Fragile Base Class, Dynamic Method Dispatch & vtable, Abstract vs. Interface, Composition vs. Inheritance, SOLID (SRP, OCP, LSP, ISP, DIP) Bad vs Good Java code, 5 GoF Patterns (Singleton, Factory, Builder, Strategy, Observer). |
+| **02** | **Data Structures & Algorithms** | 8 | 4 | Big-O & Amortized Doubling Math, Arrays vs. LinkedLists cache locality, HashMap internals & O(1) LRU Cache Java implementation, BST/AVL/Heaps/Graphs, Quicksort vs Mergesort vs TimSort, Two Pointers & Sliding Window. |
+| **03** | **Database Management Systems** | 9 | 4 | Relational Keys Hierarchy, 1NF to BCNF Normalization & Anomalies, ACID Transactions with Undo/Redo Logs, 4 ANSI Isolation Levels & Concurrency Anomalies, B+ Tree Clustered Indexing & Leftmost Prefix Rule, SQL Logical Execution Order & DENSE_RANK(). |
+| **04** | **Operating Systems & Concurrency** | 8 | 4 | Processes vs. Threads & TLB Context Switch Cost, Concurrency vs Parallelism, Broken count++ Assembly Race Condition, Mutex vs. Semaphore Ownership, volatile Visibility vs Atomicity, Coffman Deadlock Conditions, Virtual Memory & Thrashing. |
+| **05** | **Computer Networks & Web Protocols** | 8 | 4 | OSI 7 Layers vs. TCP/IP 4 Layers & PDU Encapsulation, TCP 3-Way Handshake & TIME_WAIT 2*MSL, HTTP/1.1 to HTTP/3 QUIC & TLS 1.3 Hybrid Encryption, HTTP Method Idempotency & Status Codes, Browser URL Navigation to Paint, WebSockets vs. SSE. |
+| **06** | **Backend Architecture & System Design**| 8 | 4 | REST vs. GraphQL vs. gRPC, Keyset vs. Offset Pagination, Token Bucket Rate Limiting, Modular Monolith vs Microservices & Saga Pattern, Multi-Layer Cache-Aside with Stampede/Penetration/Avalanche Fixes, Kafka Partitions & Consumer Groups, Circuit Breakers. |
+| **07** | **JavaScript, TypeScript & Frontend** | 9 | 4 | Event Loop Microtask vs Macrotask Queue, Closures & Var Loop Trap, Hoisting & TDZ, TypeScript Types vs Interfaces, React Virtual DOM Reconciliation & Array Index Anti-Pattern, Hooks Batching & Memoization, Next.js CSR/SSR/SSG/ISR, Debounce vs. Throttle. |
+| **08** | **Web Security Fundamentals** | 8 | 4 | Authentication vs Authorization (401 vs 403), IDOR / BOLA Vulnerable vs. Secure Code, Stateful Sessions vs Stateless JWTs, HttpOnly Secure Cookies, OAuth 2.0 with PKCE, OWASP Top 10 (SQLi, XSS, CSRF, SSRF), Salted Hashes (Bcrypt/Argon2 vs SHA-256). |
+| **09** | **DevOps, Testing & Engineering Practices** | 8 | 4 | Git Internals & Golden Rule of Rebase, Reset vs. Revert, Senior PR Review Checklist, Testing Pyramid with AAA Pattern & Mockito, Agile Scrum & Story Points, Docker Multi-Stage Builds vs VMs, Blue-Green & Canary Deployments. |
+| **Total** | **9 Core Modules** | **84** | **36** | **Comprehensive Full-Stack Computer Science Syllabus (100% Verified)** |
 
 ---
 

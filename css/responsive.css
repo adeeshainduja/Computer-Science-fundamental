@@ -69,6 +69,43 @@
   .bottom-nav {
     padding-bottom: max(env(safe-area-inset-bottom), 12px);
   }
+
+  /* Layout Containment for Mobile Viewports (Prevents Page Overflow) */
+  .main-container,
+  .view-section,
+  #topicDetailView,
+  #topicDetailContent,
+  .lesson-card,
+  .level-section {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .code-block-wrapper,
+  .bad-code-card,
+  .good-code-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .code-pre,
+  pre {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+  }
+
+  .table-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
